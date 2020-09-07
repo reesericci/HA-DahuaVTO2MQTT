@@ -1,0 +1,16 @@
+{
+  "name": "DahuaVTO to MQTT",
+  "version": "0.01",
+  "slug": "dahuavto2mqtt",
+  "description": "Dahua VT) to MQTT Addon for Home Assistant",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "host": "",
+    "username": "",
+    "password": "",
+    "mqtt_topic_prefix": "DahuaVTO"
+  },
+  "schema": {}
+}
