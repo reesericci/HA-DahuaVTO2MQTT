@@ -1,4 +1,4 @@
-#!/bin/bashio
+#!/usr/bin/env bashio
 CONFIG_PATH=/data/options.json
 
 DAHUA_VTO_HOST="$(bashio::config 'host')"
