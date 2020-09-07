@@ -1,4 +1,6 @@
-# DahuaVTO2MQTT
+# DahuaVTO2MQTT (Home Assistant Addon)
+
+# NOT READY FOR USE!!!!!
 Listens to events from Dahua VTO unit and publishes them via MQTT Message
 
 [MQTT Events](https://github.com/elad-bar/DahuaVTO2MQTT/blob/master/MQTTEvents.MD)
