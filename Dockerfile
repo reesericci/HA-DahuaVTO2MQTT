@@ -8,4 +8,6 @@ COPY phpMQTT.php ./phpMQTT.php
 COPY run.sh ./run.sh
 
 CMD apt-get install bashio -y
-CMD run.sh
+RUN chmod a+x /data/run.sh
+
+CMD [ "/data/run.sh" ]
