@@ -1,59 +1,27 @@
 # DahuaVTO2MQTT (Home Assistant Addon)
 
-# NOT READY FOR USE!!!!!
-Listens to events from Dahua VTO unit and publishes them via MQTT Message
+# Untested (I don't have a Dahua VTO doorbell yet!!!!!)
+
+Listens to events from Dahua VTO unit and publishes them via MQTT message
 
 [MQTT Events](https://github.com/elad-bar/DahuaVTO2MQTT/blob/master/MQTTEvents.MD)
 
-[Supported Models](https://github.com/elad-bar/DahuaVTO2MQTT/blob/master/SupportedModels.md)
+[Supported Models](https://github.com/elad-bar/DahuaVTO2MQTT/blob/master/SupportedModels.md) - Please PR if this works for your model.
 
-## Environment Variables
-```
-DAHUA_VTO_HOST: 			Dahua VTO hostname or IP
-DAHUA_VTO_USERNAME: 		Dahua VTO username to access (should be admin)
-DAHUA_VTO_PASSWORD: 		Dahua VTO administrator password (same as accessing web management)
-MQTT_BROKER_HOST: 			MQTT Broker hostname or IP
-MQTT_BROKER_PORT: 			MQTT Broker port, default=1883
-MQTT_BROKER_USERNAME: 		MQTT Broker username
-MQTT_BROKER_PASSWORD: 		MQTT Broker password
-MQTT_BROKER_TOPIC_PREFIX: 	MQTT Broker topic prefix, default=DahuaVTO
-```
+#### MQTT info is being auto-discovered through Home Assistant via the MQTT integration. Make sure that is set up.
 
-## Run manually
-Requirements:
-* All environment variables above
-* PHP
 
+## Options
 ```
-php -f DahuaEventHandler.php
+host: 			Dahua VTO hostname or IP
+username: 		Dahua VTO username to access (should be admin)
+password: 		Dahua VTO administrator password (same as accessing web management)
+mqtt_topic_prefix: 	MQTT Broker topic prefix, default=DahuaVTO
 ```
-
-## Docker Compose
-```
-version: '2'
-services:
-  dahuavto2mqtt:
-    image: "eladbar/dahuavto2mqtt:latest"
-    container_name: "dahuavto2mqtt"
-    hostname: "dahuavto2mqtt"
-    restart: always
-    environment:
-      - DAHUA_VTO_HOST=vto-host
-      - DAHUA_VTO_USERNAME=Username
-      - DAHUA_VTO_PASSWORD=Password
-      - MQTT_BROKER_HOST=mqtt-host
-      - MQTT_BROKER_PORT=1883
-      - MQTT_BROKER_USERNAME=Username
-      - MQTT_BROKER_PASSWORD=Password 
-      - MQTT_BROKER_TOPIC_PREFIX=DahuaVTO
-```
-
-## Changelog
-
-- 2020-Sep-04 - Edit Readme file, Added Supported Models and MQTT Events documentation
-- 2020-Mar-27 - Added new environment variable - MQTT_BROKER_TOPIC_PREFIX
-- 2020-Feb-03 - Initial version combing the event listener with MQTT
 
 ## Credits
+Credit goes to <a href="https://github.com/elad-bar">@elad-bar</a> for making the original docker image for DahuaVTO2MQTT.
+Original code can be found in <a href="https://github.com/elad-bar/DahuaVTO2MQTT">@elad-bar/DahuaVTO2MQTT</a>
+
 All credits goes to <a href="https://github.com/riogrande75">@riogrande75</a> who wrote that complicated integration
 Original code can be found in <a href="https://github.com/riogrande75/Dahua">@riogrande75/Dahua</a>
